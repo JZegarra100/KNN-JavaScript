@@ -3,7 +3,7 @@ function chartData(){
         datasets:
         [
             {
-                label: "Spam data chart",
+                label: "Spam e-mail data chart",
                 data: trainingSet().map((point)=>{
                     return {x:point.Var1, y:point.Var2}
                 }),
@@ -12,7 +12,7 @@ function chartData(){
                 }),
                 pointRadius: 5.5,
                 showLine: false,
-                backgroundColor: 'purple'
+                backgroundColor: 'blue'
 
             }
         ]
