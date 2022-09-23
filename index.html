@@ -1,49 +1,86 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head background= #00000;>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="data.js"></script>
     <script src="config.js"></script>
-</head>
-<body>
-    <div id="chart-container">
-        <canvas id="chart"></canvas>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>KNN con JS</title>
+
+  </head>
+  <body>
+    
+    <!-- Navbar Section -->
+    <nav class="navbar">
+      <a class="navbar__logo">KNN con JS</a>
+      <div class="navbar__bars"><i class="fas fa-bars"></i></div>
+      <div class="navbar__menu">
+        <a class="navbar__menu--links">Algoritmos y Estructura de Datos (AyED) - UNSA</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero__container">
+        <div class="hero__container--right" id="chart-container">
+          
+          <p style="text-align:left;">El algoritmo de las K vecinas más cercanas o K-nearest neighbors (kNN) es un algoritmo de Machine Learning que pertenece a los algoritmos de aprendizaje supervisado simples y fáciles de aplicar que pueden ser utilizados para resolver problemas de clasificación y de regresión. En este artículo veremos la definición de este algoritmo, su funcionamiento así como también una aplicación directa en programación.</p>
+          <br></br>
+                     
+          <canvas id="chart"></canvas>
+        </div>
+
+        <div id="form" class="hero__container--left">
+          
+          <p style="text-align:left;">Predicción</p>
+          <p></p>
+
+          <table>
+              <tr>
+                <td><strong>Var1</strong></td>
+                <td><strong>Var2</strong></td>
+                <td><strong>Target Esperado</strong></td>
+              </tr>
+              <tr>
+                <td>137</td>
+                <td>-55</td>
+                <td style="text-align:left;">Correo Spam (*)</td>
+              </tr>
+              <tr>
+                <td>119</td>
+                <td>-65</td>
+                <td style="text-align:left;">Correo Spam</td>
+              </tr>
+              <tr>
+                <td>76</td>
+                <td>36</td>
+                <td style="text-align:left;">Correo No Spam</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>2</td>
+                <td style="text-align:left;">Correo No Spam</td>
+              </tr>
+              </table><br><br>
+          <span>Var1 value(x): <input type="text" id="Var1"></span><br><br>
+          <span>Var2 value(y): <input type="text" id="Var2"></span><br><br>
+          <span>Input test point: <button id="plot">Input</button></span><br><br>
+          <span>Predict output: <button id="predict">Predict</button></span><br><br>
+          <span>Output: <span id="output"></span></span><br><br>
+        </div>
+
+      </div>
     </div>
-    <div id="form">
-        <table>
-            <tr>
-              <td><strong>Var1</strong></td>
-              <td><strong>Var2</strong></td>
-              <td><strong>Target Esperado</strong></td>
-            </tr>
-            <tr>
-              <td>137</td>
-              <td>-55</td>
-              <td>Correo Spam (*)</td>
-            </tr>
-            <tr>
-              <td>119</td>
-              <td>-65</td>
-              <td>Correo Spam</td>
-            </tr>
-            <tr>
-              <td>76</td>
-              <td>36</td>
-              <td>Correo No Spam</td>
-            </tr>
-            <tr>
-              <td>15</td>
-              <td>2</td>
-              <td>Correo No Spam</td>
-            </tr>
-            </table><br><br>
-        <span>Var1 value(x): <input type="text" id="Var1"></span><br><br>
-        <span>Var2 value(y): <input type="text" id="Var2"></span><br><br>
-        <span>Input test point: <button id="plot">Input</button></span><br><br>
-        <span>Predict output: <button id="predict">Predict</button></span><br><br>
-        <span>Output: <span id="output"></span></span><br><br>
-    </div>
-</body>
-<script src="script.js"></script>
+  </body>
+  <script src="script.js"></script>
 </html>
