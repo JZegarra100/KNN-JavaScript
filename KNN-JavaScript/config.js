@@ -8,11 +8,11 @@ function chartData(){
                     return {x:point.Var1, y:point.Var2}
                 }),
                 pointBackgroundColor: trainingSet().map((point)=>{
-                    return point.rain ? 'red' : 'blue'
+                    return point.spam ? 'red' : 'blue'
                 }),
-                pointRadius: 5.5,
+                pointRadius: 1.5,
                 showLine: false,
-                backgroundColor: 'blue'
+                backgroundColor: 'red'
 
             }
         ]
@@ -44,7 +44,7 @@ function chartOptions(){
                     ticks:
                     {
                         fontSize:20,
-                        max:10,
+                        max:600,
                         min:0
                     }
                 }
@@ -62,8 +62,8 @@ function chartOptions(){
                     ticks:
                     {
                         fontSize:20,
-                        max:10,
-                        min:0
+                        max:750,
+                        min:-600
                     }
                 }
             ]

@@ -24,7 +24,7 @@ document.querySelector('#predict').addEventListener('click',()=>{
     let redNeighbors = 0
     let blueNeighbors = 0
 
-    for(let k=1; k<=5; k++){
+    for(let k=1; k<=9; k++){
         const minDistance = Math.min.apply(Math, distances)
         const index = distances.indexOf(minDistance)
         chart.data.datasets[0].pointBackgroundColor[index]=='red' ? redNeighbors++ : blueNeighbors++
