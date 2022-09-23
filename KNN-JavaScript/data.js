@@ -5566,13 +5566,5 @@ function trainingSet(){
 		,{Var1:83,Var2:80,spam:false}
 		,{Var1:61,Var2:17,spam:false}
 		,{Var1:10,Var2:6,spam:false}
-		,{Var1:138,Var2:-55,spam:true}
-		,{Var1:119,Var2:-65,spam:true}
-		,{Var1:76,Var2:36,spam:false}
-		,{Var1:15,Var2:1,spam:false}
-		,{Var1:52,Var2:1,spam:false}
-		,{Var1:40,Var2:17,spam:false}
-
-
     ]
 }
