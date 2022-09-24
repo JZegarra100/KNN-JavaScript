@@ -10,7 +10,7 @@ function chartData(){
                 pointBackgroundColor: trainingSet().map((point)=>{
                     return point.spam ? 'red' : 'blue'
                 }),
-                pointRadius: 1.5,
+                pointRadius: 3,
                 showLine: false,
                 backgroundColor: 'red'
 
@@ -44,7 +44,7 @@ function chartOptions(){
                     ticks:
                     {
                         fontSize:20,
-                        max:600,
+                        max:500,
                         min:0
                     }
                 }
@@ -62,8 +62,8 @@ function chartOptions(){
                     ticks:
                     {
                         fontSize:20,
-                        max:750,
-                        min:-600
+                        max:500,
+                        min:-500
                     }
                 }
             ]

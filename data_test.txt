@@ -1,0 +1,23 @@
+Data De Test
+
+ham,"Then why no one talking to me,,,"
+ham,"Thanks for looking out for me. I really appreciate.,,,"
+ham,"""And that's fine, I got enough bud to last most of the night at least"",,,"
+ham,"Wish i were with you now!,,,"
+ham,"Haha mayb u're rite... U know me well. Da feeling of being liked by someone is gd lor. U faster go find one then all gals in our group attached liao.,,,"
+spam,",""This is the 2nd time we have tried 2 contact u. U have won the Ã¥Â£750 Pound prize. 2 claim is easy, call 087187272008 NOW1! Only 10p per minute. BT-national-rate."",,,"
+spam,",""REMINDER FROM O2: To get 2.50 pounds free call credit and details of great offers pls reply 2 this text with your valid name, house no and postcode"",,,"
+spam,",Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C's apply 08452810075over18's,,,"
+spam,",""Had your contract mobile 11 Mnths? Latest Motorola, Nokia etc. all FREE! Double Mins & Text on Orange tariffs. TEXT YES for callback, no to remove from records."",,,"
+spam,",ASKED 3MOBILE IF 0870 CHATLINES INCLU IN FREE MINS. INDIA CUST SERVs SED YES. L8ER GOT MEGA BILL. 3 DONT GIV A SHIT. BAILIFF DUE IN DAYS. I O Ã¥Â£250 3 WANT Ã¥Â£800,,,"
+
+1475,10.0,12.0,false ok
+1476,23.0,4.0,false ok
+1477,21.0,2.0,false ok 
+1478,5.0,7.0,false ok
+1479,32.0,19.0,false ok
+1480,288.0,-182.0,true ok 
+1481,195.0,117.0,true ok
+1482,132.0,107.0,true ok
+1483,179.0,217.0,true ok
+1484,127.0,29.0,true ok
