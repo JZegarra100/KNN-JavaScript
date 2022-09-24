@@ -1,6 +1,7 @@
 #chart-container{
     height: 98vmin;
-    width: 95vmin;
+    width: 105vmin;
+    margin-top: 10vmin;
     float: left;
 }
 
@@ -8,6 +9,6 @@
     float: left;
     text-align: center;
     margin-left: 25vmin;
-    margin-top: -50vmin;
+    margin-top: -35vmin;
     font-family: Arial, Helvetica, sans-serif;
 }
