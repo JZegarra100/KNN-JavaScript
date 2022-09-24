@@ -10,7 +10,7 @@ function chartData(){
                 pointBackgroundColor: trainingSet().map((point)=>{
                     return point.spam ? 'red' : 'blue'
                 }),
-                pointRadius: 3,
+                pointRadius: 4,
                 showLine: false,
                 backgroundColor: 'red'
 
