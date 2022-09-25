@@ -4,14 +4,18 @@ let chart = new Chart(document.querySelector('#chart'), {
     options: chartOptions()
 })
 
+//  Para graficar punto de prueba
 document.querySelector('#plot').addEventListener('click',()=>{
     chart.data.datasets[0].data.push({
         x: Number(document.querySelector('#Var1').value),
         y: Number(document.querySelector('#Var2').value)
     })
+    chart.data.datasets[0].pointBackgroundColor.push("black")
     chart.update()
+
 })
 
+// Para pasar punto de prueba por predictor para mostrar a que clasificacion pertenece
 document.querySelector('#predict').addEventListener('click',()=>{
     const x = chart.data.datasets[0].data[chart.data.datasets[0].data.length-1].x
     const y = chart.data.datasets[0].data[chart.data.datasets[0].data.length-1].y
