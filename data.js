@@ -1478,5 +1478,5 @@ function trainingSet(){
 		,{Var1:31,Var2:29,spam:false}
 		
     ]
-	
+
 }
