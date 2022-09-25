@@ -41,3 +41,66 @@ document.querySelector('#predict').addEventListener('click',()=>{
     }
     chart.update()
 })
+
+class KNN_c {
+
+    constructor(k = 1, data, labels) {
+        this.k = k;
+        this.data = data;
+        this.labels = labels;
+    }
+
+    generateDistanceMap(point) {
+
+        const map = [];
+        let maxDistanceInMap;
+
+        for (let index = 0, len = this.data.length; index < len; index++) {
+
+            const otherPoint = this.data[index];
+            const otherPointLabel = this.labels[index];
+            const thisDistance = distance(point, otherPoint);
+
+            if (!maxDistanceInMap || thisDistance < maxDistanceInMap) {
+
+                map.push({
+                    index,
+                    distance: thisDistance,
+                    label: otherPointLabel
+                });
+                map.sort((a, b) => a.distance < b.distance ? -1 : 1);
+
+                if (map.length > this.k) {
+                    map.pop();
+                }
+                maxDistanceInMap = map[map.length - 1].distance;
+
+            }
+        }
+
+
+        return map;
+    }
+
+    predict(point) {
+
+        const map = this.generateDistanceMap(point);
+        const votes = map.slice(0, this.k);
+        const voteCounts = votes
+            // Reduces into an object like {label: voteCount}
+            .reduce((obj, vote) => Object.assign({}, obj, {[vote.label]: (obj[vote.label] || 0) + 1}), {})
+        ;
+        const sortedVotes = Object.keys(voteCounts)
+            .map(label => ({label, count: voteCounts[label]}))
+            .sort((a, b) => a.count > b.count ? -1 : 1)
+        ;
+
+        return {
+            label: sortedVotes[0].label,
+            voteCounts,
+            votes
+        };
+
+    }
+
+}
