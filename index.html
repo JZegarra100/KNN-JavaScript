@@ -1,86 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head background= #00000;>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script src="data.js"></script>
-    <script src="config.js"></script>
+  <head background=#00000;>
+      <link rel="stylesheet" href="style.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+      <script src="data.js"></script>
+      <script src="config.js"></script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
-    />
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <title>KNN con JS</title>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <link
+              rel="stylesheet"
+              href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+              integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      />
+      <link rel="stylesheet" href="./styles/styles.css"/>
+      <title>KNN con JS</title>
 
   </head>
   <body>
-    
-    <!-- Navbar Section -->
-    <nav class="navbar">
-      <a class="navbar__logo">KNN con JS - <i>Grupo 8</i></a>
-      <div class="navbar__bars"><i class="fas fa-bars"></i></div>
-      <div class="navbar__menu">
-        <a class="navbar__menu--links">Algoritmos y Estructura de Datos (AyED) - UNSA</a>
+      <!-- Navbar Section -->
+      <nav class="navbar">
+          <a class="navbar__logo">KNN con JS - <i>Grupo 8</i></a>
+          <div class="navbar__bars"><i class="fas fa-bars"></i></div>
+          <div class="navbar__menu">
+              <a class="navbar__menu--links">Algoritmos y Estructura de Datos (AyED) - UNSA</a>
+          </div>
+      </nav>
+      <p style="padding-top: 30px; padding-right: 90px; padding-bottom: 0px; padding-left:110px">El algoritmo de las K vecinas
+          más cercanas o K-nearest neighbors (kNN) es un algoritmo de Machine Learning que pertenece a los algoritmos de
+          aprendizaje supervisado simples y fáciles de aplicar que pueden ser utilizados para resolver problemas de
+          clasificación y de regresión.<br/> <br/>A partir de un KD-Tree implementamos el algoritmo KNN para predecir correos
+          spam y no spam con datos de kaggle.<br/> <br/> Un Árbol kd (abreviatura de árbol k-dimensional) es una estructura de
+          datos de particionado del espacio que organiza los puntos en un Espacio euclídeo de k dimensiones. Técnicamente, la
+          letra k se refiere al número de dimensiones. Un árbol kd tridimensional podría ser llamado un árbol 3d. Sin embargo
+          se suele emplear la expresión "árbol kd tridimensional". (También es más descriptivo, ya que un árbol tridimensional
+          puede ser varias cosas, pero el término árbol kd se refiere a un tipo en concreto de árbol de particionado.) Las
+          letras k y d se escriben en minúsculas, incluso al principio de una oración. La k se escribe en cursiva, aunque son
+          también comunes las formas "árbol KD" y "árbol Kd".</p>
+      <br/> <br/>
+      <!-- Hero Section -->
+      <div class="hero">
+          <div class="hero__container">
+              <div class="hero__container--right" id="chart-container">
+                  <canvas id="chart"></canvas>
+              </div>
+
+              <div id="form" class="hero__container--left">
+                  <br><br>
+                  <H3 style="text-align:left;"><i>df</i>(test)</H3>
+                  <p></p>
+
+                  <table>
+                      <tr>
+                          <td><strong>(Var1</strong></td>
+                          <td><strong>,Var2)</strong></td>
+                          <td><strong> |Target Esperado</strong></td>
+                      </tr>
+                      <tr>
+                          <td>(10,</td>
+                          <td>12)</td>
+                          <td style="text-align:left;"> | Correo No Spam</td>
+                      </tr>
+                      <tr>
+                          <td>(288,</td>
+                          <td>-182)</td>
+                          <td style="text-align:left;"> | Correo Spam</td>
+                      </tr>
+                      <tr>
+                          <td>(195,</td>
+                          <td>117)</td>
+                          <td style="text-align:left;"> | Correo Spam</td>
+                      </tr>
+                      <tr>
+                          <td>(5,</td>
+                          <td>7)</td>
+                          <td style="text-align:left;"> | Correo No Spam</td>
+                      </tr>
+                  </table>
+                  <br><br>
+                  <p style="text-align:left;">Predicción</p>
+                  <p></p>
+                  <span>Var1 value(x): <input type="text" id="Var1"></span><br><br>
+                  <span>Var2 value(y): <input type="text" id="Var2"></span><br><br>
+                  <span>Input test point: <button id="plot">Input</button></span><br><br>
+                  <span>Predict output: <button id="predict">Predict</button></span><br><br>
+                  <span>Output: <span id="output"></span></span><br><br>
+              </div>
+
+          </div>
       </div>
-    </nav>
-    <p style="padding-top: 30px; padding-right: 90px; padding-bottom: 0px; padding-left:110px">El algoritmo de las K vecinas más cercanas o K-nearest neighbors (kNN) es un algoritmo de Machine Learning que pertenece a los algoritmos de aprendizaje supervisado simples y fáciles de aplicar que pueden ser utilizados para resolver problemas de clasificación y de regresión.<br/> <br/>A partir de un KD-Tree implementamos el algoritmo KNN para predecir correos spam y no spam con datos de kaggle.<br/> <br/> Un Árbol kd (abreviatura de árbol k-dimensional) es una estructura de datos de particionado del espacio que organiza los puntos en un Espacio euclídeo de k dimensiones. Técnicamente, la letra k se refiere al número de dimensiones. Un árbol kd tridimensional podría ser llamado un árbol 3d. Sin embargo se suele emplear la expresión "árbol kd tridimensional". (También es más descriptivo, ya que un árbol tridimensional puede ser varias cosas, pero el término árbol kd se refiere a un tipo en concreto de árbol de particionado.) Las letras k y d se escriben en minúsculas, incluso al principio de una oración. La k se escribe en cursiva, aunque son también comunes las formas "árbol KD" y "árbol Kd".</p>
-    <br/> <br/>
-    <!-- Hero Section -->
-    <div class="hero">
-      <div class="hero__container">
-        <div class="hero__container--right" id="chart-container">                  
-          <canvas id="chart"></canvas>
-        </div>
 
-        <div id="form" class="hero__container--left">
-          <br><br>
-          <H3 style="text-align:left;"><i>df</i>(test)</H3>
-          <p></p>
-
-          <table>
-              <tr>
-                <td><strong>(Var1</strong></td>
-                <td><strong>,Var2)</strong></td>
-                <td><strong>  |Target Esperado</strong></td>
-              </tr>
-              <tr>
-                <td>(10,</td>
-                <td>12)</td>
-                <td style="text-align:left;"> | Correo No Spam</td>
-              </tr>
-              <tr>
-                <td>(288,</td>
-                <td>-182)</td>
-                <td style="text-align:left;"> | Correo Spam</td>
-              </tr>
-              <tr>
-                <td>(195,</td>
-                <td>117)</td>
-                <td style="text-align:left;"> | Correo Spam</td>
-              </tr>
-              <tr>
-                <td>(5,</td>
-                <td>7)</td>
-                <td style="text-align:left;"> | Correo No Spam</td>
-              </tr>
-              </table><br><br>
-              <p style="text-align:left;">Predicción</p>
-              <p></p>
-          <span>Var1 value(x): <input type="text" id="Var1"></span><br><br>
-          <span>Var2 value(y): <input type="text" id="Var2"></span><br><br>
-          <span>Input test point: <button id="plot">Input</button></span><br><br>
-          <span>Predict output: <button id="predict">Predict</button></span><br><br>
-          <span>Output: <span id="output"></span></span><br><br>
-        </div>
-
-      </div>
-    </div>
-
-    <p style="padding-top: 170px; padding-right: 90px; padding-bottom: 80px; padding-left:110px">El algoritmo tiene una precisión del 99%. Los datos de kaggle en <i>.csv</i> se procesaron en python para convertirlos en un vector de 2 dimenciones mediante bolsa de palabras.</p>
+      <p style="padding-top: 170px; padding-right: 90px; padding-bottom: 80px; padding-left:110px">El algoritmo tiene una
+          precisión del 99%. Los datos de kaggle en <i>.csv</i> se procesaron en python para convertirlos en un vector de 2
+          dimenciones mediante bolsa de palabras.</p>
 
   </body>
   <script src="script.js"></script>
