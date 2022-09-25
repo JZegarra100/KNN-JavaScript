@@ -80,8 +80,6 @@ class KNN_c {
 
             }
         }
-
-
         return map;
     }
 

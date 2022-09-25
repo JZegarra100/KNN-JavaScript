@@ -13,7 +13,6 @@ function chartData(){
                 pointRadius: 4,
                 showLine: false,
                 backgroundColor: 'red'
-
             }
         ]
     }
