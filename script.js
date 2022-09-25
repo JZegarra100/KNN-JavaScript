@@ -34,7 +34,6 @@ document.querySelector('#predict').addEventListener('click', () => {
         chart.data.datasets[0].pointBackgroundColor[index] == 'red' ? redNeighbors++ : blueNeighbors++
         distances[index] = +Infinity
     }
-
     if (redNeighbors > blueNeighbors) {
         document.querySelector('#output').innerHTML = 'Correo Spam'
         chart.data.datasets[0].pointBackgroundColor[chart.data.datasets[0].data.length - 1] = 'red'
