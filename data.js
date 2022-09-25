@@ -1,5 +1,5 @@
 function trainingSet(){
-	
+
     return [
 		{Var1:117,Var2:52,spam:true}
 		,{Var1:31,Var2:21,spam:true}
@@ -1478,4 +1478,5 @@ function trainingSet(){
 		,{Var1:31,Var2:29,spam:false}
 		
     ]
+	
 }
