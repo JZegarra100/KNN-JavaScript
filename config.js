@@ -37,7 +37,7 @@ function chartOptions(){
                     scaleLabel:
                     {
                         display:true,
-                        labelString: 'Eje X',
+                        labelString: 'Var 1',
                         fontSize:20
                     },
                     ticks:
@@ -55,7 +55,7 @@ function chartOptions(){
                     scaleLabel:
                     {
                         display:true,
-                        labelString: 'Eje Y',
+                        labelString: 'Var 2',
                         fontSize:20
                     },
                     ticks:
