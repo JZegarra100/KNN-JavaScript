@@ -87,7 +87,6 @@ class KNN_c {
         const map = this.generateDistanceMap(point);
         const votes = map.slice(0, this.k);
         const voteCounts = votes
-            // Reduces into an object like {label: voteCount}
             .reduce((obj, vote) => Object.assign({}, obj, {[vote.label]: (obj[vote.label] || 0) + 1}), {})
         ;
         const sortedVotes = Object.keys(voteCounts)
